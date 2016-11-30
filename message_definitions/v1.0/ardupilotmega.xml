@@ -1572,6 +1572,58 @@
             <field name="rpm2" type="float">RPM Sensor2</field>
         </message>
 
+        <message id="227" name="ASH_DATA">
+            <description>ash data</description>
+            <field type="uint16_t" name="binCount0">bin 0 count</field>
+            <field type="uint16_t" name="binCount1">bin 1 count</field>
+            <field type="uint16_t" name="binCount2">bin 2 count</field>
+            <field type="uint16_t" name="binCount3">bin 3 count</field>
+            <field type="uint16_t" name="binCount4">bin 4 count</field>
+            <field type="uint16_t" name="binCount5">bin 5 count</field>
+            <field type="uint16_t" name="binCount6">bin 6 count</field>
+            <field type="uint16_t" name="binCount7">bin 7 count</field>
+            <field type="uint16_t" name="binCount8">bin 8 count</field>
+            <field type="uint16_t" name="binCount9">bin 9 count</field>
+            <field type="uint16_t" name="binCount10">bin 10 count</field>
+            <field type="uint16_t" name="binCount11">bin 11 count</field>
+            <field type="uint16_t" name="binCount12">bin 12 count</field>
+            <field type="uint16_t" name="binCount13">bin 13 count</field>
+            <field type="uint16_t" name="binCount14">bin 14 count</field>
+            <field type="uint16_t" name="binCount15">bin 15 count</field>
+            <field type="float" name="samplingPeriod">OPC sampling period</field>
+            <field type="float" name="myPM1">PM 1 concentration</field>
+            <field type="float" name="myPM3">PM 3 concentration</field>
+            <field type="float" name="myPM10">PM 10 concentration</field>
+            <field type="float" name="myPM17_5">PM 17_5 concentration</field>
+            <field type="float" name="totalConc">total ash concentration</field>
+        </message>
+            
+        <message id="228" name="SEND_ASH_DATA">
+            <description>send ash data</description>
+            <field type="uint16_t" name="sendBinCount0">send bin 0 count</field>
+            <field type="uint16_t" name="sendBinCount1">send bin 1 count</field>
+            <field type="uint16_t" name="sendBinCount2">send bin 2 count</field>
+            <field type="uint16_t" name="sendBinCount3">send bin 3 count</field>
+            <field type="uint16_t" name="sendBinCount4">send bin 4 count</field>
+            <field type="uint16_t" name="sendBinCount5">send bin 5 count</field>
+            <field type="uint16_t" name="sendBinCount6">send bin 6 count</field>
+            <field type="uint16_t" name="sendBinCount7">send bin 7 count</field>
+            <field type="uint16_t" name="sendBinCount8">send bin 8 count</field>
+            <field type="uint16_t" name="sendBinCount9">send bin 9 count</field>
+            <field type="uint16_t" name="sendBinCount10">send bin 10 count</field>
+            <field type="uint16_t" name="sendBinCount11">send bin 11 count</field>
+            <field type="uint16_t" name="sendBinCount12">send bin 12 count</field>
+            <field type="uint16_t" name="sendBinCount13">send bin 13 count</field>
+            <field type="uint16_t" name="sendBinCount14">send bin 14 count</field>
+            <field type="uint16_t" name="sendBinCount15">send bin 15 count</field>
+            <field type="float" name="sendSamplingPeriod">send OPC sampling period</field>
+            <field type="float" name="sendMyPM1">send PM 1 concentration</field>
+            <field type="float" name="sendMyPM3">send PM 3 concentration</field>
+            <field type="float" name="sendMyPM10">send PM 10 concentration</field>
+            <field type="float" name="sendMyPM17_5">send PM 17_5 concentration</field>
+            <field type="float" name="sendTotalConc">send total ash concentration</field>
+        </message>
+        
         <!-- ardupilot specific mavlink2 messages starting at 11000-->
         <message id="11000" name="DEVICE_OP_READ">
             <description>Read registers for a device</description>
