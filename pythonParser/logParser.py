@@ -2,8 +2,8 @@ from pymavlink import mavutil
 from pymavlink.dialects.v20 import ardupilotmega as mavlink2
 from Tkinter import Tk
 from tkFileDialog import askopenfilename
-import struct
-import sys
+import struct, sys, inspect
+
 
 # Try import easygui, if not then try automatically installing it using pip.
 try:
@@ -217,6 +217,16 @@ def get_desired_messages_dataflash(message_formats):
     list_of_message_format_names = sorted(message_formats.keys())
     return get_list_of_desired_messages(list_of_message_format_names)
 
+def get_desired_messages_telemetrylog():
+    prefix = 'MAVLINK_MSG_ID_'
+    mavlink_globals_list = dir(mavlink2)
+    available_messages = []
+    for global_object in mavlink_globals_list:
+        if global_object.startswith(prefix):
+            available_messages.append(global_object[len(prefix):])
+    return get_list_of_desired_messages(available_messages)
+    
+
 def process_dataflash_file(input_file, output_file):
     with open(input_file) as infile, open(output_file,'w') as outfile:
         message_formats = get_all_message_formats_dataflash(infile)
@@ -235,7 +245,8 @@ def process_dataflash_file(input_file, output_file):
         return True
 
 def process_telemetrylog_file(input_file, output_file):
-    desired_messages = ['WIND', 'AHRS']
+    desired_messages = get_desired_messages_telemetrylog()
+    #desired_messages = ['WIND', 'AHRS']
     with open(input_file, 'rb') as infile, open(output_file, 'w') as outfile:
         current_message_types = {}
         message_formats = get_all_message_formats_telemetry_log(desired_messages)
